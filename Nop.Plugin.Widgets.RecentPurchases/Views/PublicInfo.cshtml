@@ -1,0 +1,39 @@
+﻿@model PublicInfoModel
+@using Nop.Plugin.Widgets.RecentPurchases.Models;
+<div id="recent-purchase" class="">    
+    <div class="mini-shopping-cart">
+        <span><b>@Model.CustomerName</b> just purchased:</span>
+        <div class="items">
+            <div class="item first">
+                @if (Model.ShowProductImage)
+                {
+                    <div class="picture">
+                        <a href="@Url.RouteUrl("Product", new { SeName = Model.ProductSeName })" title="@Model.Picture.Title">
+                            <img alt="@Model.Picture.AlternateText" src="@Model.Picture.ImageUrl" title="@Model.Picture.Title" />
+                        </a>
+                    </div>
+                }
+                <div class="product">
+                    <div class="name">
+                        <a href="@Url.RouteUrl("Product", new { SeName = Model.ProductSeName })">@Model.ProductName</a>
+                    </div>
+                    @if (Model.ShowQuantity)
+                    {
+                        <div class="quantity">@T("ShoppingCart.Mini.Quantity"): <span>@Model.Quantity</span></div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <input type="button" value="Close" class="button-1 cart-button" onclick="$('#recent-purchase').hide()" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#recent-purchase').css({ 'visibility': '', 'display': '' });
+        $('#recent-purchase').css({ 'background-color': '#fff' });
+        $('#recent-purchase').css({ 'position': 'fixed', 'bottom': '0', 'right': '0', 'z-index': '999' });
+    });
+</script>

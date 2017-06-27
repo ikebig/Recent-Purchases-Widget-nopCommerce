@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: Recent Customer Purchases Popup
+SystemName: Widgets.RecentPurchases
+Version: 1.00
+SupportedVersions: 3.90
+Author: Konweh Ikechukwu
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.RecentPurchases.dll
+Description: This plugin enables customers to see other customers who recently purchase an item from the store.
